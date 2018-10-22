@@ -1,4 +1,17 @@
-# Use nginx 1.15.5
-FROM nginx:1.15.5
+# Use centos 7
+FROM centos:7
 
-# Create top page contents
+# Install nginx
+RUN yum update && \
+    yum install -y nginx
+
+# Add source
+ADD app /app
+ADD default.conf /etc/nginx/conf.d/default.conf
+
+# Set port
+EXPOSE 80
+
+RUN mkdie -p /run/nginx
+
+CMD nginx -g "daemon off;"
