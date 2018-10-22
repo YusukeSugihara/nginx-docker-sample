@@ -2,7 +2,7 @@
 FROM centos:7
 
 # Install nginx
-RUN yum update && \
+RUN yum update -y && \
     yum install -y nginx
 
 # Add source
