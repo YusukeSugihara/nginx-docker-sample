@@ -15,6 +15,6 @@ ADD default.conf /etc/nginx/conf.d/default.conf
 # Set port
 EXPOSE 80
 
-RUN mkdie -p /run/nginx
+RUN mkdir -p /run/nginx
 
 CMD nginx -g "daemon off;"
