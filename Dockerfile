@@ -1,6 +1,9 @@
 # Use centos 7
 FROM centos:7
 
+# Add repos for nginx
+ADD repo/nginx.repo /etc/yum.repos.d/nginx.repo
+
 # Install nginx
 RUN yum update -y && \
     yum install -y nginx
